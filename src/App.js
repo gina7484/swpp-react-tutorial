@@ -4,6 +4,8 @@ import './App.css';
 import TodoList from './containers/TodoList/TodoList';
 import {BrowserRouter, Route, Redirect, Switch} from 'react-router-dom';
 import NewTodo from './containers/TodoList/NewTodo/NewTodo'
+import TodoDetail from './components/TodoDetail/TodoDetail'
+
 function App() {
   return (
     <BrowserRouter>

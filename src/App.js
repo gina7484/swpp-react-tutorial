@@ -8,8 +8,13 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Route path='/todos' exact render={()=> <TodoList title="My TODOs!"/>}/>
-        <Route path='/new-todo' exact component={NewTodo}/>
+        <Switch>
+          <Route path='/todos' exact render={()=> <TodoList title="My TODOs!"/>}/>
+          <Route path='/todos/:id' exact component={TodoDetail}/>
+          <Route path='/new-todo' exact component={NewTodo}/>
+          <Redirect exact from='/' to='/todos' />
+          <Route render={()=> <h1>Not Found</h1>} />
+        </Switch>
       </div>
     </BrowserRouter>
   );
